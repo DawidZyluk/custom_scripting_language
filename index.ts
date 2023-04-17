@@ -1,45 +1,5 @@
-enum TokenType {
-  Number, 
-  Identifier, 
-  Equals, 
-  LeftParenthesis, 
-  RightParenthesis,
-  BinaryOperator,
-  Keyword,
-}
-
-const Keywords = [
-  "let",
-]
-
-const Operators = [
-  "+",
-  "-",
-  "*",
-  "/"
-]
-
-class Token {
-  value: string;
-  type: TokenType;
-
-  constructor(value = "", type: TokenType) {
-    this.value = value;
-    this.type = type;
-  }
-}
-
-function isAlpha(char: string) {
-	return char.toUpperCase() != char.toLowerCase();
-}
-
-function isSkippable(char: string) {
-	return char === " " || char === "\n" || char === "\t";
-}
-
-function isInt(char: string) {
-  return (char >= '0' && char <= '9');
-}
+import { isAlpha, isInt, isSkippable } from "./utils.ts";
+import { TokenType, Token, Keywords, Operators} from "./types.ts";
 
 function tokenize(sourceCode: string): Token[] {
   const tokens = new Array<Token>();
@@ -85,6 +45,7 @@ function tokenize(sourceCode: string): Token[] {
 		}
 	}
 
+  tokens.push({type: TokenType.EOF, value: "EndOfFile"})
   return tokens
 }
 
