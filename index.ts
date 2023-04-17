@@ -1,7 +1,7 @@
 import { isAlpha, isInt, isSkippable } from "./utils.ts";
 import { TokenType, Token, Keywords, Operators} from "./types.ts";
 
-function tokenize(sourceCode: string): Token[] {
+export function tokenize(sourceCode: string): Token[] {
   const tokens = new Array<Token>();
 	const src = sourceCode.split("");
 

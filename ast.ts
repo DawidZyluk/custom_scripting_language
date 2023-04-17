@@ -28,6 +28,6 @@ export interface Identifier extends Expression {
 }
 
 export interface NumericLiteral extends Expression {
-  kind: "Identifier";
+  kind: "NumericLiteral";
   value: number;
 }
