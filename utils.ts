@@ -3,7 +3,7 @@ export function isAlpha(char: string) {
 }
 
 export function isSkippable(char: string) {
-	return char === " " || char === "\n" || char === "\t";
+	return char === " " || char === "\n" || char === "\t" || char === '\r';
 }
 
 export function isInt(char: string) {

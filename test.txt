@@ -1,1 +1,13 @@
-let res = 2 + 2 * 4
+const array = [1, 2, 3, 4];
+let sum;
+
+for(const num of array) {
+  sum = sum + num;
+}
+
+const sumSquared = sum * sum;
+
+if(sumSquared > 14)
+  while(sumSquared > 0) sumSquared = sumSquared - 1;
+else 
+  sum = 0;

@@ -2,22 +2,40 @@ export enum TokenType {
   Number, 
   Identifier, 
   Equals, 
+  Comma,
+  Dot,
+  Colon,
   LeftParenthesis, 
   RightParenthesis,
+  LeftBrace,
+  RightBrace,
+  LeftBracket,
+  RightBracket,
   BinaryOperator,
   Keyword,
-  EOF
+  EOF,
+  EOL
 }
 
 export const Keywords = [
   "let",
+  "const",
+  "function",
+  "for",
+  "of",
+  "if",
+  "else",
+  "while"
 ]
 
 export const Operators = [
   "+",
   "-",
   "*",
-  "/"
+  "/",
+  "%",
+  "<",
+  ">",
 ]
 
 export class Token {
