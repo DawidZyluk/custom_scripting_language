@@ -1,0 +1,4 @@
+cztery: 4
+trzy: 3
+dwa: 2
+jeden: 1

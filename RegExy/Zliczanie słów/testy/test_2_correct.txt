@@ -1,0 +1,2 @@
+pietnascie: 15
+osiem: 8

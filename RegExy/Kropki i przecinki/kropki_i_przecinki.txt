@@ -1,0 +1,6 @@
+Witam.Tu nie ma spacji przed kropka,a tutaj nie ma spacji przed przecinkiem.
+Zobaczymy co z tego bedzie.
+1.1
+1,3
+cos, jest            
+                                                
