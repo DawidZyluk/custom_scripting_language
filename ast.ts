@@ -1,33 +1,35 @@
+// deno-lint-ignore-file no-empty-interface
+
 export type NodeType =
   | "Program"
   | "NumericLiteral"
   | "Identifier"
-  | "BinaryExpression";
+  | "BinaryExpr";
 
-export interface Statement {
+export interface Stmt {
   kind: NodeType;
 }
 
-export interface Program extends Statement {
-  kind: "Program",
-  body: Statement[];
+export interface Program extends Stmt {
+  kind: "Program";
+  body: Stmt[];
 }
 
-export interface Expression extends Statement {}
+export interface Expr extends Stmt {}
 
-export interface BinaryExpression extends Expression {
-  kind: "BinaryExpression";
-  left: Expression;
-  right: Expression;
-  operator: string;
+export interface BinaryExpr extends Expr {
+  kind: "BinaryExpr";
+  left: Expr;
+  right: Expr;
+  operator: string; // needs to be of type BinaryOperator
 }
 
-export interface Identifier extends Expression {
-  kind: "Identifier",
-  symbol: string
+export interface Identifier extends Expr {
+  kind: "NumericLiteral";
+  symbol: string;
 }
 
-export interface NumericLiteral extends Expression {
+export interface NumericLiteral extends Expr {
   kind: "NumericLiteral";
   value: number;
 }
