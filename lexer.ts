@@ -7,9 +7,9 @@ export function tokenize(sourceCode: string): Token[] {
 
   while (src.length > 0) {
     if (src[0] === "(") {
-      tokens.push(new Token(src.shift(), TokenType.LeftParenthesis));
+      tokens.push(new Token(src.shift(), TokenType.OpenParen));
     } else if (src[0] === ")") {
-      tokens.push(new Token(src.shift(), TokenType.RightParenthesis));
+      tokens.push(new Token(src.shift(), TokenType.CloseParen));
     } else if (src[0] === "{") {
       tokens.push(new Token(src.shift(), TokenType.LeftBrace));
     } else if (src[0] === "}") {
@@ -65,9 +65,9 @@ export function tokenize(sourceCode: string): Token[] {
   return tokens;
 }
 
-const source = await Deno.readTextFile("./test.txt");
-for (const token of tokenize(source)) {
-  console.log({ value: token.value, type: TokenType[token.type] });
-}
+// const source = await Deno.readTextFile("./test.txt");
+// for (const token of tokenize(source)) {
+//   console.log({ value: token.value, type: TokenType[token.type] });
+// }
 
 // deno run -A .\index.ts

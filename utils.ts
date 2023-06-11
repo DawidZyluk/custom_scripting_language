@@ -1,3 +1,4 @@
+
 export function isAlpha(char: string) {
 	return char.toUpperCase() != char.toLowerCase();
 }

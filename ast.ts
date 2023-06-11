@@ -25,7 +25,7 @@ export interface BinaryExpr extends Expr {
 }
 
 export interface Identifier extends Expr {
-  kind: "NumericLiteral";
+  kind: "Identifier";
   symbol: string;
 }
 
