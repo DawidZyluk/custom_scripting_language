@@ -1,4 +1,5 @@
-import Parser from "./parser.ts";
+import Parser from "./syntax/parser.ts";
+import { evaluate } from "./runtime/interpreter.ts";
 
 repl();
 
@@ -14,7 +15,12 @@ function repl() {
     }
 
     const program = parser.produceAST(input);
+    console.log("------------------------ PROGRAM AST --------------------")
     console.log(program);
+
+    const result = evaluate(program);
+    console.log("------------------------ RESULT --------------------")
+    console.log(result);
   }
 }
 
