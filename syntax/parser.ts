@@ -157,21 +157,14 @@ export default class Parser {
   
   private parse_primary_expr(): Expr {
     const tk = this.at().type;
-
-    
     switch (tk) {
-      
       case TokenType.Identifier:
         return { kind: "Identifier", symbol: this.eat().value } as Identifier;
-
-      
       case TokenType.Number:
         return {
           kind: "NumericLiteral",
           value: parseFloat(this.eat().value),
         } as NumericLiteral;
-
-      
       case TokenType.OpenParen: {
         this.eat(); 
         const value = this.parse_expr();
@@ -181,8 +174,6 @@ export default class Parser {
         ); 
         return value;
       }
-
-      
       default:
         console.error("Unexpected token found during parsing!", this.at());
         Deno.exit(1);

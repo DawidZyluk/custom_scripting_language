@@ -22,11 +22,11 @@ function repl() {
     }
 
     const program = parser.produceAST(input);
-    // console.log("------------------------ PROGRAM AST --------------------")
-    // console.log(program);
+    console.log("------------------------ PROGRAM AST --------------------")
+    console.log(program);
 
     const result = evaluate(program, env);
-    //console.log("------------------------ RESULT --------------------")
+    console.log("------------------------ RESULT --------------------")
     console.log(result);
   }
 }
