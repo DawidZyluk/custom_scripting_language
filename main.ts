@@ -1,10 +1,17 @@
 import Parser from "./syntax/parser.ts";
 import { evaluate } from "./runtime/interpreter.ts";
+import Environment from "./runtime/environment.ts";
+import { MK_BOOL, MK_NULL, MK_NUMBER } from "./runtime/values.ts";
 
 repl();
 
 function repl() {
   const parser = new Parser();
+  const env = new Environment();
+  env.declareVar("PI", MK_NUMBER(3.14159265359))
+  env.declareVar("true", MK_BOOL(true));
+  env.declareVar("false", MK_BOOL(false));
+  env.declareVar("null", MK_NULL());
   console.log("\nJS++ v0.1");
 
   while (true) {
@@ -18,7 +25,7 @@ function repl() {
     console.log("------------------------ PROGRAM AST --------------------")
     console.log(program);
 
-    const result = evaluate(program);
+    const result = evaluate(program, env);
     console.log("------------------------ RESULT --------------------")
     console.log(result);
   }
