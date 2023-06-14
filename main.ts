@@ -8,10 +8,10 @@ repl();
 function repl() {
   const parser = new Parser();
   const env = new Environment();
-  env.declareVar("PI", MK_NUMBER(3.14159265359))
-  env.declareVar("true", MK_BOOL(true));
-  env.declareVar("false", MK_BOOL(false));
-  env.declareVar("null", MK_NULL());
+  env.declareVar("PI", MK_NUMBER(3.14159265359), true)
+  env.declareVar("true", MK_BOOL(true), true);
+  env.declareVar("false", MK_BOOL(false), true);
+  env.declareVar("null", MK_NULL(), true);
   console.log("\nJS++ v0.1");
 
   while (true) {
@@ -22,11 +22,11 @@ function repl() {
     }
 
     const program = parser.produceAST(input);
-    console.log("------------------------ PROGRAM AST --------------------")
-    console.log(program);
+    // console.log("------------------------ PROGRAM AST --------------------")
+    // console.log(program);
 
     const result = evaluate(program, env);
-    console.log("------------------------ RESULT --------------------")
+    //console.log("------------------------ RESULT --------------------")
     console.log(result);
   }
 }

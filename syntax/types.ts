@@ -1,6 +1,8 @@
 export enum TokenType {
   Number, 
   Identifier, 
+  Let,
+  Const,
   Equals, 
   Comma,
   Dot,
@@ -18,8 +20,6 @@ export enum TokenType {
 }
 
 export const Keywords = [
-  "let",
-  "const",
   "function",
   "for",
   "of",
